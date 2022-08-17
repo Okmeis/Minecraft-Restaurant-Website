@@ -1,0 +1,26 @@
+.contentdiv {
+    background-color: rgb(192, 162, 130);
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(127, 104, 80);
+    border-width: medium;
+    margin-right:5%;
+    margin-left:5%;
+    padding-left: min(24px,2.5%);
+    padding-right: min(24px,2.5%);
+    padding-top: min(24px,2.5%);
+    padding-bottom: min(24px,2.5%);
+}
+
+
+
+.adderfield {
+    background-color:rgb(203, 180, 161);
+    border-color:rgb(127, 104, 80);
+}
+
+.adderbtn {
+    background-color:rgb(127, 104, 80);
+    border-color:rgb(79, 65, 50);
+    font-size:16px;
+}

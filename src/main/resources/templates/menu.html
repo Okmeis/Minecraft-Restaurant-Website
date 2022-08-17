@@ -1,0 +1,33 @@
+<html layout:decorate="~{base}" th:with="currentPage='menu'" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Restaurant - Menu</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/heneral.css">
+  </head>
+  <body>
+    <div layout:fragment="content" class="w-100 p-2">
+      <div style="text-align:center;">
+        <a href="/addtomenu" th:if="${#httpServletRequest.remoteUser != null}">
+          <div class="adderbtn btn-primary btn">
+            Add To Menu
+          </div>
+        </a>
+      </div>
+      <br th:if="${#httpServletRequest.remoteUser != null}">
+      <div>
+        <div class="row" style="padding-left:5px;padding-right:5px;">
+          <div th:each="food,iterator: ${menu}"  class="foodframe col-sm-2">
+            <div style="margin-left:0px;margin-right:0px;">
+              <img class="foodcontent foodImagecontent"  th:src="'../graphics/'+${food.image}+'.png'">
+            </div>
+            <div>
+              <h3 th:text="${food.name}">Foodname</h3> 
+              <h4 th:text="${food.price}+' Coins'">Price</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

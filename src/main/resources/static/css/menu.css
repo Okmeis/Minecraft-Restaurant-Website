@@ -1,0 +1,35 @@
+.foodframe {
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(127, 104, 80);
+    border-width: 2px;
+    text-align: center;
+    min-width: 96px;
+    max-width: 106px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.foodcontent {
+    /*Rendering against blurry resizing of the dishes*/
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    display: inline-block;
+    vertical-align: middle;
+    height: 126px;
+  }
+
+  .foodImagecontent {
+    display: inline-block;
+    vertical-align: middle;
+    height: 96px;
+  }
+  

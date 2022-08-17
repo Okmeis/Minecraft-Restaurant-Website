@@ -1,0 +1,40 @@
+<html layout:decorate="~{base}" th:with="currentPage='menu'" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Restaurant - Menu</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="/css/general.css">
+  </head>
+  <body>
+    <div layout:fragment="content" class="w-100 p-2">
+      <div class="container">
+        <h1>Super Secret Employee Page - Add Food To Menu</h1>
+        <br>
+        <br>
+        <div th:if="${messageError}" class="alert alert-danger" th:text="${messageError}">Message</div>
+        <form action="/addtomenu" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <h3>Name</h3>
+            <input name="name" class="adderfield form-control" type="text" th:value="${name}" maxlength="9">
+          </div>
+          <br>
+          <div class="form-group">
+            <h3>Food Type</h3>
+            <input name="image" class="adderfield form-control" type="text" th:value="${image}" placeholder="&quot;Meal&quot;, &quot;Drink&quot; or &quot;Alcohol&quot;">
+          </div>
+          <br>
+          <div class="form-group">
+            <h3>Price</h3>
+            <div class="input-group">
+              <input type="number" class="adderfield form-control" name="price" min="1" max="25" th:value="${price}"> 
+              <div class="input-group-append">
+                <span class="adderfield input-group-text">Price in Golden Coins</span>
+              </div>
+              <br>
+            </div>
+            <br>
+          <input class="adderbtn btn btn-primary w-100" type="submit" value="Confirm">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

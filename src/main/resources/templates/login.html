@@ -1,0 +1,44 @@
+<html layout:decorate="~{base}" th:with="currentPage='login'" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Restaurant - Log [[${#httpServletRequest.remoteUser != null} ? 'Out' : 'In']]</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="/css/general.css">
+  </head>
+  <body>
+    <div layout:fragment="content" class="w-100 p-2">
+      <div class="container" th:if="${#httpServletRequest.remoteUser != null}">
+        <form th:action="@{/logout}" method="post" style="text-align:center;">
+          <input type="submit" value="Log Out" class="btn adderbtn btn-success" />
+        </form>
+	  </div>
+	  <div class="container" th:if="${#httpServletRequest.remoteUser == null}">
+        <h1>Employee Login Page</h1>
+        <br>
+        <br>
+		<div th:if="${param.error}" class="alert alert-danger">
+		  Unknown username or password.
+		</div>
+		<div th:if="${param.logout}" class="alert alert-success">
+		  You got logged out successfully!
+		</div>
+		<form th:action="@{/login}" method="post">
+		  <div class="input-group form-group">
+		    <div class="input-group-prepend">
+			  <span class="adderfield input-group-text"><i class="fas fa-user"></i></span>
+			</div>
+			<input class="adderfield form-control" type="text" placeholder="Username" name="username">
+		  </div>
+		  <div class="input-group form-group">
+			<div class="input-group-prepend">
+			  <span class="adderfield input-group-text"><i class="fas fa-key"></i></span>
+			</div>
+			<input type="password" class="adderfield form-control" placeholder="Password" name="password">
+		  </div>
+		  <div class="form-group">
+			<input type="submit" value="Log In" class="btn adderbtn btn-success float-right"/>
+		  </div>
+		</form>
+      </div>
+    </div>
+  </body>
+</html>
