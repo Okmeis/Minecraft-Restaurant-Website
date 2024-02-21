@@ -14,25 +14,25 @@
         <form action="/addtomenu" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <h3>Name</h3>
-            <input name="name" class="adderfield form-control" type="text" th:value="${name}" maxlength="9">
+            <input name="name" class="adderfield form-control" type="text" th:value="${name}" maxlength="9"/>
           </div>
           <br>
           <div class="form-group">
             <h3>Food Type</h3>
-            <input name="image" class="adderfield form-control" type="text" th:value="${image}" placeholder="&quot;Meal&quot;, &quot;Drink&quot; or &quot;Alcohol&quot;">
+            <input name="image" class="adderfield form-control" type="text" th:value="${image}" placeholder="&quot;Meal&quot;, &quot;Drink&quot; or &quot;Alcohol&quot;"/>
           </div>
           <br>
           <div class="form-group">
             <h3>Price</h3>
             <div class="input-group">
-              <input type="number" class="adderfield form-control" name="price" min="1" max="25" th:value="${price}"> 
+              <input type="number" class="adderfield form-control" name="price" min="1" max="25" th:value="${price}"/> 
               <div class="input-group-append">
                 <span class="adderfield input-group-text">Price in Golden Coins</span>
               </div>
               <br>
             </div>
             <br>
-          <input class="adderbtn btn btn-primary w-100" type="submit" value="Confirm">
+          <input class="adderbtn btn btn-primary w-100" type="submit" value="Confirm"/>
         </form>
       </div>
     </div>
