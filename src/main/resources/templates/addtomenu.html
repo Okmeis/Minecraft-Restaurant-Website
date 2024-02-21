@@ -12,6 +12,7 @@
         <br>
         <div th:if="${messageError}" class="alert alert-danger" th:text="${messageError}">Message</div>
         <form action="/addtomenu" method="POST" enctype="multipart/form-data">
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
           <div class="form-group">
             <h3>Name</h3>
             <input name="name" class="adderfield form-control" type="text" th:value="${name}" maxlength="9"/>
